@@ -1,36 +1,20 @@
 <!DOCTYPE html>
 <html>
   
-<form>
-  <input type="button" value="Запустить ПК" />
+<form action="script.php" method="post">
+  <input type="submit" value="Нажми меня" />
 </form>
-<p>ПК выключен.</p>
 
-<script type="text/php">
-    function updateButton()
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  myFunction();
+}
+
+function myFunction() 
 {
-    echo "Пример функции.\n";
-    return $retval;
+  print "hello";
+  print "world";
 }
-</script>  
-  
-<script>
-    const button = document.querySelector("input");
-    const paragraph = document.querySelector("p");
-
-button.addEventListener("click", updateButton);
-
-function updateButton2() {
-  
-  if (button.value === "Запустить ПК") {
-    button.value = "Выключить ПК";
-    paragraph.textContent = "ПК запущен!";
-  } else {
-    button.value = "Запустить ПК";
-    paragraph.textContent = "ПК выключен.";
-  }
-}
-</script>
   
 </html>
 
