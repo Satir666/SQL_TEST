@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $Name = $_POST['name2'];
   $Subname = $_POST['name3'];
 
-  $con = new mysqli_connect($servername, $username, $password, $dbname);
+  $con = mysqli_connect($servername, $username, $password, $dbname);
   if(mysqli_connect_errno)  
   {
     print "<p style='color: red'>Произошла ошибка!</p>";
