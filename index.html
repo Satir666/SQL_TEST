@@ -13,6 +13,11 @@ const paragraph = document.querySelector("p");
 button.addEventListener("click", updateButton);
 
 function updateButton() {
+
+  <?php
+    echo 'php вызван!';
+  ?>
+  
   if (button.value === "Запустить ПК") {
     button.value = "Выключить ПК";
     paragraph.textContent = "ПК запущен!";
