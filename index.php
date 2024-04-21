@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Форма ввода</title>
-</head>
-<body>
-  <form>
-    <label for="name">Имя:</label>
-    <input type="text" id="name">
+<?php
+$servername = "sql11.freemysqlhosting.net";
+$username = "sql11700649";
+$password = "KMsCLmwY7u";
+$dbname = "sql11700649";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $ID = $_POST['name1'];
+  $Name = $_POST['name2'];
+  $Subname = $_POST['name3'];
+  // Ваш код здесь...
+  // Параметры подключения к базе данных
+  // Создаем соединение с базой данных
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  // Подготовка запроса
+  $stmt = $conn->prepare("INSERT INTO table_name (name, email, message) VALUES (?, ?, ?)");
+  $stmt->bind_param("sss", $name, $email, $message);
 
-    <label for="email">Email:</label>
-    <input type="email" id="email">
+  // Выполнение запроса
+  $stmt->execute();
 
-    <label for="message">Сообщение:</label>
-    <textarea id="message"></textarea>
-
-    <input type="submit" value="Отправить">
-  </form>
-</body>
-</html>
+  // Закрываем соединение
+  $stmt->close();
+  $conn->close();
+}
+?>
