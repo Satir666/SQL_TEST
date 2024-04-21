@@ -6,17 +6,21 @@
 </form>
 <p>ПК выключен.</p>
 
+<script type="text/php">
+    function updateButton()
+{
+    echo "Пример функции.\n";
+    return $retval;
+}
+</script>  
+  
 <script>
     const button = document.querySelector("input");
-const paragraph = document.querySelector("p");
+    const paragraph = document.querySelector("p");
 
 button.addEventListener("click", updateButton);
 
-function updateButton() {
-
-  <?php
-    echo 'php вызван!';
-  ?>
+function updateButton2() {
   
   if (button.value === "Запустить ПК") {
     button.value = "Выключить ПК";
