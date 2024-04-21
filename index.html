@@ -3,6 +3,7 @@
 
 <form>
 <input type="button" value="Запустить ПК" />
+<?php echo '<p>Hello World</p>'; ?>
 </form>
 <p>ПК выключен.</p>
 
@@ -15,6 +16,7 @@ button.addEventListener("click", updateButton);
 function updateButton() {
   if (button.value === "Запустить ПК") {
     button.value = "Выключить ПК";
+    <?php echo '<p>Hello World</p>'; ?>
     paragraph.textContent = "ПК запущен!";
   } else {
     button.value = "Запустить ПК";
