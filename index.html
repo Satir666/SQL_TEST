@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
 
+<?php
+echo "Hello World!";
+?>
+  
 <form>
 <input type="button" value="Запустить ПК" />
-<?php echo '<p>Hello World</p>'; ?>
 </form>
 <p>ПК выключен.</p>
 
   <script>
-  const button = document.querySelector("input");
+const button = document.querySelector("input");
 const paragraph = document.querySelector("p");
 
 button.addEventListener("click", updateButton);
 
 function updateButton() {
+  <?php
+     echo "Hello World!";
+  ?>
   if (button.value === "Запустить ПК") {
     button.value = "Выключить ПК";
-    <?php echo '<p>Hello World</p>'; ?>
+    
     paragraph.textContent = "ПК запущен!";
   } else {
     button.value = "Запустить ПК";
