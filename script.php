@@ -7,4 +7,3 @@ function myFunction()
 {
   <?php echo '<p>Hello World</p>'; ?>
 }
-?>
