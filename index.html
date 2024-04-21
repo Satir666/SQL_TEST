@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html>
-
-<?php
-echo "Hello World!";
-?>
-  
 <form>
 <input type="button" value="Запустить ПК" />
 </form>
 <p>ПК выключен.</p>
 
   <script>
-const button = document.querySelector("input");
-const paragraph = document.querySelector("p");
+  const button = document.querySelector("input");
+  const paragraph = document.querySelector("p");
 
-button.addEventListener("click", updateButton);
+  button.addEventListener("click", updateButton);
 
-function updateButton() {
-  <?php
-     echo "Hello World!";
-  ?>
+  function updateButton() {
+
   if (button.value === "Запустить ПК") {
     button.value = "Выключить ПК";
     
@@ -29,10 +22,7 @@ function updateButton() {
     paragraph.textContent = "ПК выключен.";
   }
 }
-</script>
-  
-<?php echo 'Самая распространенная конструкция'; ?>
-  
+</script>  
 </html>
 
 
